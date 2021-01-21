@@ -1,0 +1,24 @@
+PROCEDURE swap(VAR xp:INTEGER,VAR yp:INTEGER)
+VAR
+    temp : INTEGER;
+BEGIN
+    tmp:=xp;
+    xp:=yp;
+    yp:=tmp
+END
+ALGORITHM algorithm_cart
+VAR
+    n:=list_cart:ARRAY_OF INTEGER[50];
+    i,j,temp : INTEGER;
+BEGIN
+FOR i FROM 0 TO n-1 DO
+    read n(i+1);
+    temp:= n(i+1);
+    FOR j FROM i+1 TO n-1   DO
+        REPEAT
+            if (temp < n[j-1]) THEN
+            swap (temp,n[j-1])
+        UNTIL (j=n-1)
+    END_FOR
+END_FOR
+END
